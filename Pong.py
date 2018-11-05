@@ -59,8 +59,30 @@ def moveUp():
 turtle.onkey(moveDown, "Down")
 turtle.onkey(moveUp, "Up")
 turtle.listen()
+
+def updateComputer():
+    
+    if comp.ycor() > player.ycor():
+        y = comp.ycor()
+        y -= computerSpeed
+        comp.sety(y)
+    elif comp.ycor() < player.ycor():
+        y = comp.ycor()
+        y += computerSpeed
+        comp.sety(y)
+    else:
+        #Dont really need to do anything
+        y = comp.ycor()
+        comp.sety(y)
+        
+
 #----- Main Loop -----#
 
+while True:
+
+    # Implement Computer following ball
+    updateComputer()
+        
     
     
 
